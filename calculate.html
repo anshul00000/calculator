@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculaator</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: rgb(255, 255, 255);
+            font-family: 'Tektur', sans-serif;
+        }
+
+        #main {
+            /* background-image: url("https://images.pexels.com/photos/1111318/pexels-photo-1111318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); */
+            /* background-image: url("33ed0ab9-b2ac-4ee9-8340-f77c52bb98d9.jpeg"); */
+            /* background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed; */
+            min-height: 100vh;
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+
+        }
+
+        .screen {
+            width: 30.3vw;
+            height: 10vw;
+            /* background-color: rgba(0, 255, 255, 0.270); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+
+        }
+
+        .screen_screen {
+            width: 90%;
+            height: 60%;
+            background-color: rgba(255, 255, 255, 0.108);
+            border-radius: 10%;
+            /* backdrop-filter: blur(50px); */
+            color: rgb(255, 255, 255);
+            font-size: 50px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            overflow-x: auto;
+
+        }
+
+        .screen_screen::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* .text{
+
+       } */
+        .coloumns {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .div {
+            border: 5px solid rgba(255, 255, 255, 0.155);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+        }
+
+        .row {
+            display: flex;
+            position: relative;
+            gap: 10px;
+            /* justify-content: space-around; */
+            /* align-items: center; */
+        }
+
+        .btn {
+            /* padding: 2vh 3vw;  */
+            background: rgba(255, 0, 0, 0);
+            border: 5px solid rgba(0, 255, 255, 0);
+            backdrop-filter: blur(5px);
+            font-size: 15px;
+            font-weight: 700;
+            width: 7.1vw;
+            height: 7vh;
+            cursor: pointer;
+            box-shadow: 2px 2px 1px rgb(255, 255, 255);
+
+
+        }
+
+        .btn:hover {
+            background-color: rgb(0, 255, 255);
+            box-shadow: 2px 2px 1px rgba(255, 255, 255, 0);
+            color: black;
+        }
+
+        .btn_hi {
+            background-color: rgb(255, 170, 0);
+            height: 17vh;
+            position: absolute;
+            right: 0;
+            font-size: 1.5vw;
+            z-index: 10;
+
+        }
+
+        .btn_wi {
+            width: 15vw;
+        }
+        .watermark{
+            position: absolute;
+            color: aliceblue;
+            z-index: 999;
+            top: 100px;
+            left: 50px;
+        }
+
+        @media (max-width :1000px) {
+        
+        .screen {
+            width: 50vw;
+            height: 15vw;
+            /* background-color: rgba(0, 255, 255, 0.270); */
+          
+        }
+        .screen_screen{
+           
+            font-size: 30px;
+
+        }
+
+        .btn {
+         
+            width: 11.5vw;
+            font-size: 10px;
+         
+        }
+
+
+        .btn_hi {
+            background-color: rgb(255, 170, 0);
+            height: 17vh;
+            position: absolute;
+            right: 0;
+            font-size: 1.5vw;
+            z-index: 10;
+
+        }
+
+        .btn_wi {
+            width: 24vw;
+        }
+            
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+<div class="watermark">anshul._00</div>
+    <div id="main">
+        <div class="div">
+            <div class="screen">
+                <div class="screen_screen"></div>
+            </div>
+            <div class="coloumns">
+
+
+                <div class="row">
+                    <button type="button" class="btn">c</button>
+                    <button type="button" class="btn">Clear</button>
+                            <button type="button" class="btn">/</button>
+                            <button type="button" class="btn">*</button>
+                </div>
+
+                <div class="row">
+                    <button type="button" class="btn">7</button>
+                    <button type="button" class="btn">8</button>
+                    <button type="button" class="btn">9</button>
+                    <button type="button" class="btn">-</button>
+                </div>
+
+
+                <div class="row">
+                    <button type="button" class="btn">4</button>
+                    <button type="button" class="btn">5</button>
+                    <button type="button" class="btn">6</button>
+                    <button type="button" class="btn">+</button>
+                </div>
+
+
+                <div class="row">
+                    <button type="button" class="btn">1</button>
+                    <button type="button" class="btn">2</button>
+                    <button type="button" class="btn">3</button>
+                    <button type="button" class="btn btn_hi">=</button>
+                </div>
+
+                <div class="row">
+                    <button type="button" class="btn btn_wi">0</button>
+                    <button type="button" class="btn">.</button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        let screen = document.querySelector(".screen_screen");
+        let button = document.getElementsByClassName("row");
+
+        let s = "";
+
+        var i;
+        for (i = 0; i < button.length; i++) {
+
+            button[i].addEventListener("click", (e) => {
+
+
+
+                if (e.target.innerHTML == "=") {
+                    // alert("ho gya bhai");
+                    if (s === "" && e.target.innerHTML === "=") {
+                        screen.innerHTML = "😥";
+
+
+                    } else {
+                        s = eval(s);
+                        // console.log(s);
+                        screen.innerHTML = s;
+
+                    }
+                } else if (e.target.innerHTML == "c") {
+                    // alert("ho gya bhai");
+                    s = "";
+                    // console.log(s);
+                    screen.innerHTML = s;
+                }else if(e.target.innerHTML == "Clear"){
+                    s = s.slice(0, -1);
+                    screen.innerHTML = s;
+                }
+                else {
+                    s += e.target.innerHTML;
+                    screen.innerHTML = s;
+
+                }
+                //  console.log(s);
+
+
+
+                //   alert(e.target.innerHTML);
+
+            })
+
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>
